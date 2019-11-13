@@ -3,3 +3,12 @@
 <%= link_to "Sign in", new_user_registration_path %></br>
   <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </br>
   <%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %> 
+<% if user_signed_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="service_form">
+        <%= render 'service_form' %>
+      </section>
+    </aside>
+  </div>
+<%end%>

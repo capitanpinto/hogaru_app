@@ -1,0 +1,16 @@
+
+
+<%= form_with(model: @service, local: true) do |f| %>
+
+  <div class="field">
+    <strong> <%= f.label "Choose the type of service that you want" %><br /></strong>
+    <%= f.select :price, [1, 2]%>
+  </div>
+  <div class="field">
+    <%= f.label "Choose the date for your service"%>
+    If our workers are unavilable to go that date we'll offer you different dates
+    <%= f.date_field :meeting_time, class: 'form-control' %>
+  </div>
+    
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'services#home'
   devise_for :users
   resources :users
-  resource :services
+  resource :services,         only: [:create, :destroy]
 end
