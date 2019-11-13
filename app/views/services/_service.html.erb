@@ -1,0 +1,7 @@
+<li id="service-<%= service.id %>">
+  <span class="user"><%= link_to service.user.name, service.user %></span>
+  <span class="price"><%= service.price %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(service.created_at) %> ago.
+  </span>
+</li>
