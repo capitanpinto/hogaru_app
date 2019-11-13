@@ -18,10 +18,13 @@ class ServicesController < ApplicationController
   
   
   private
+  
+    def table
+      Service.where("meeting_time=(?)", "2019-11-01")
+    end
 
     def service_params
       params.require(:service).permit(:user_id, :price, :paid, :meeting_time)
     end
     
 end
-

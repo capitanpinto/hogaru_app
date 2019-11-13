@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_165811) do
+ActiveRecord::Schema.define(version: 2019_11_13_195301) do
 
   create_table "services", force: :cascade do |t|
     t.float "price"
@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 2019_11_13_165811) do
     t.date "meeting_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"user_id\", \"maid_id\"", name: "index_services_on_user_id_and_maid_id"
+    t.integer "maid_id"
+    t.index ["user_id", "maid_id"], name: "index_services_on_user_id_and_maid_id"
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_165811) do
     t.string "name"
     t.boolean "maid"
     t.date "retire_date"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
