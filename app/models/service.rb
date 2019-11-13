@@ -3,6 +3,6 @@ class Service < ApplicationRecord
   default_scope -> { order(meeting_time: :desc) }
   validates :user_id, presence: true
   validates :price, numericality: true
-  validates_date :meeting_time
+  validates_date :meeting_time, presence: true
   
 end

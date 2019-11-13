@@ -1,6 +1,7 @@
 <h1>Services Home</h1>
 <%= link_to "Mi Perfil", current_user, :class => 'navbar-link'  %> </br>
 <%= link_to "Sign in", new_user_registration_path %></br>
+<%= link_to "Edit", edit_user_registration_path %></br>
   <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </br>
   <%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %> 
 <% if user_signed_in? %>

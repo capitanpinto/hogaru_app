@@ -3,7 +3,7 @@ class CreateServices < ActiveRecord::Migration[6.0]
     create_table :services do |t|
       t.float :price
       t.references :user, null: false, foreign_key: true
-      t.boolean :paid
+      t.boolean :paid, :default => false
       t.date :meeting_time
 
       t.timestamps
