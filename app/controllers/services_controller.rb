@@ -1,18 +1,17 @@
 class ServicesController < ApplicationController
   def home
-    if current_user
-      @service = current_user.services.build
-    end 
+    @service = current_user.services.build if current_user
   end
   
   def create
     @service = current_user.services.build(service_params)
     @service.update(paid: false)
     if @service.save
-      flash[:success] = "You have requested a service!"
+      flash[:alert] = "You have requested a service!"
       redirect_to root_url
     else
-      render 'services#home'
+      flash[:alert] = "Your request wasn't sent, try again!"
+      redirect_to root_url
     end
   end
   

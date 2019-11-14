@@ -1,7 +1,6 @@
-
-
 <%= form_with(model: @service, local: true) do |f| %>
-
+   <%= render 'shared/error_messages', object: f.object %>
+      
   <div class="field">
     <strong> <%= f.label "Choose the type of service that you want" %><br /></strong>
     <%= f.select :price, [1,2,3,4]%>
@@ -13,4 +12,5 @@
   </div>
     
   <%= f.submit "Post", class: "btn btn-primary" %>
+  
 <% end %>
