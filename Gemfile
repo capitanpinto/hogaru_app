@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'ruby',       '2.5.7'
 gem 'rails',      '6.0.0'
 gem 'devise'
+gem "better_errors"
+gem "binding_of_caller"
 gem 'bootstrap-sass', '3.4.1'
 gem 'puma',       '3.12.1'
 gem 'faker',          '2.1.2'

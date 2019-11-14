@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
+  
   def home
-    @service = current_user.services.build if current_user
   end
   
   def create
