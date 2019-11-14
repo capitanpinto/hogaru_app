@@ -1,8 +1,9 @@
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
+
+      <div class="container bg-primary text-white">
       <%= link_to image_tag("hogaru.jpg", alt: "hogarus logo", width: "200px"),
                             root_path %>
           <ul class="nav navbar-nav navbar-right">
+            
             <% if user_signed_in? %>
               <%= link_to "Mi Perfil", current_user, :class => 'navbar-link'  %> </br>
               <%= link_to "Edit", edit_user_registration_path %></br>
@@ -13,4 +14,5 @@
             <%end%>
           </ul>
       </div>
-    </header>
+
+    
