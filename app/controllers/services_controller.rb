@@ -6,13 +6,16 @@ class ServicesController < ApplicationController
   
   def create
     @service = current_user.services.build(service_params)
-    @service.update(paid: false)
+    if current_user.orders.last.present?
+    ordernumber=current_user.orders.last.id 
+    @service.update(order_id: ordernumber)
+    end
     if @service.save
       flash[:alert] = "You have requested a service!"
-      redirect_to root_url
+      redirect_to '\orders\index'
     else
       flash[:alert] = "Your request wasn't sent, try again!"
-      redirect_to root_url
+      redirect_to '\orders\index'
     end
   end
   
@@ -20,7 +23,7 @@ class ServicesController < ApplicationController
   private
 
     def service_params
-      params.require(:service).permit(:user_id, :price, :paid, :meeting_time)
+      params.require(:service).permit(:user_id, :address, :paid, :meeting_time)
     end
     
 end
