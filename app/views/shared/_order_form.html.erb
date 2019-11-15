@@ -1,4 +1,4 @@
-<% if current_user.orders.last.nil? %>
+<% if current_user.orders.count==0 %>
   <%= form_with(model: Order.new, local: true) do |f| %>
     <%= f.submit "Start a New Order", class: "btn btn-primary" %>
   <% end %>
@@ -6,9 +6,7 @@
   <%= form_with(model: Order.new, local: true) do |f| %>
     <%= f.submit "Start a New Order", class: "btn btn-primary" %>
   <% end %>
-  <% else %>
-  <a href="/orders/index" class="btn btn-info" role="button">Keep Ordering</a>
-  <%end%>
-    <%= form_with(model: Order.new, local: true) do |f| %>
-    <%= f.submit "Start a New Order", class: "btn btn-primary" %>
-  <% end %>
+<% else %>
+  <%= link_to "Keep Ordering", services_path, :class => "btn btn-info" %> 
+<%end%>
+  

@@ -21,27 +21,16 @@ ActiveRecord::Schema.define(version: 2019_11_15_043049) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer "serv_id"
-    t.integer "pedido_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["pedido_id"], name: "index_relationships_on_pedido_id"
-    t.index ["serv_id", "pedido_id"], name: "index_relationships_on_serv_id_and_pedido_id", unique: true
-    t.index ["serv_id"], name: "index_relationships_on_serv_id"
-  end
-
   create_table "services", force: :cascade do |t|
     t.float "price"
     t.integer "user_id", null: false
-    t.boolean "paid"
+    t.boolean "paid", default: false
     t.date "meeting_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "maid_id"
     t.string "address"
     t.integer "order_id"
-    t.index ["user_id", "maid_id"], name: "index_services_on_user_id_and_maid_id"
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 

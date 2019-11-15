@@ -5,7 +5,7 @@
   <span class="meeting_time"><%= service.meeting_time %></span> |
   <span class="timestamp"> 
     Requested <%= time_ago_in_words(service.created_at) %> ago.
-    <%= link_to "Cancel Service", @service, method: :delete,
+    <%= link_to "Cancel Service", service, method: :delete,
                                     data: { confirm: "You sure?" } %>
   </span>
 </li>

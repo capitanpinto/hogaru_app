@@ -1,5 +1,17 @@
 <div class="center jumbotron">
 <h1>Services Home</h1>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
 <% if user_signed_in? %>
   <%= link_to "Mi Perfil", current_user, :class => 'navbar-link'  %> </br>
   <%= link_to "Edit", edit_user_registration_path %></br>
@@ -15,4 +27,15 @@
 <%= link_to "Sign in", new_user_registration_path %></br>
 <%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %> 
 <%end%>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
 </div>
