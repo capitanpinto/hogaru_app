@@ -1,11 +1,12 @@
 <%= form_with(model: Service.new, local: true) do |f| %>
    <%= render 'shared/error_messages', object: f.object %>
+   
   <div class="field">
-    <strong> <%= f.label "Choose the type of service that you want" %><br /></strong>
-    <%= f.select :price, [1,2,3,4]%>
+    <%= f.label "Enter the address where you want the service" %><br />
+    <%= f.text_field :address, autofocus: true , autocomplete: "Enter your address"%>
   </div>
   <div class="field">
-    <%= f.label "Choose the date for your service"%>
+    <%= f.label "Choose the date for your service"%></br>
     If our workers are unavilable to go that date we'll offer you different dates
     <%= f.date_field :meeting_time, class: 'form-control' %>
   </div>

@@ -16,3 +16,6 @@
 <%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %> 
 <%end%>
 </div>
+
+rails generate migration add_address_to_service address:string
+rails generate model Order services_list:array paid:boolean user:references

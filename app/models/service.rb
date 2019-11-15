@@ -4,5 +4,6 @@ class Service < ApplicationRecord
   validates :user_id, presence: true
   validates :price, numericality: true
   validates :meeting_time, presence: true
+  validates :address, presence: true
   
 end
