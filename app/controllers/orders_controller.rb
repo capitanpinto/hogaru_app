@@ -3,10 +3,10 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @order = current_user.orders.build(order_params)
+    @order = current_user.orders.build
     if @order.save
       flash[:alert] = "You have created a new order!"
-      redirect_to 'orders/index'
+      redirect_to '\orders\index'
     else
       flash[:alert] = "Your request wasn't sent, try again!"
       redirect_to root_url
@@ -19,6 +19,6 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-      params.require(:order).permit(:user_id)
+      params.require(:user_id)
     end
 end
