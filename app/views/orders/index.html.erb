@@ -1,9 +1,19 @@
 
 <h1>Tus Servicios</h1>
+  <div class="col-md-8">
+    <% if @user.orders.last.present? %>
+      <h3> You have added <%= @services.count %> services to your order </h3>
+      <ol class="services">
+        <%= render @services %>
+      </ol>
+    <% end %>
+  </div>
   <div class="row">
     <aside class="col-md-4">
       <section class="service_form">
         <%= render 'shared/service_form' %>
       </section>
     </aside>
-  </div>
+  </div></br>
+  
+  <a href=# class="btn btn-info" role="button">Checkout</a>

@@ -1,5 +1,15 @@
 class OrdersController < ApplicationController
+  
   def index
+    @user = current_user
+    if @user.orders.last.present?
+      if @user.orders.last.paid != true
+       ordernum=@user.orders.last.id
+       @services = @user.services.where("order_id = ?", ordernum)
+      end
+    else
+      @services = []
+    end
   end
   
   def create

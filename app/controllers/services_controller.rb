@@ -19,6 +19,12 @@ class ServicesController < ApplicationController
     end
   end
   
+  def destroy
+    @service.destroy
+    flash[:success] = "Service request was deleted"
+    redirect_to '\orders\index'
+  end
+  
   
   private
 

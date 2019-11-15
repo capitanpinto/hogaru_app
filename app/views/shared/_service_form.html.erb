@@ -4,11 +4,11 @@
   <div class="field">
     <%= f.label "Enter the address where you want the service" %><br />
     <%= f.text_field :address, autofocus: true , autocomplete: "Enter your address"%>
-  </div>
+  </div> </br>
   <div class="field">
     <%= f.label "Choose the date for your service"%></br>
     If our workers are unavilable to go that date we'll offer you different dates
-    <%= f.date_field :meeting_time, class: 'form-control' %>
+    <%= f.date_field :meeting_time, class: 'form-control' %></br>
   </div>
     
   <%= f.submit "Post", class: "btn btn-primary" %>

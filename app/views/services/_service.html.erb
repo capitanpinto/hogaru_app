@@ -1,7 +1,11 @@
 <li id="service-<%= service.id %>">
-  <span class="user"><%= link_to service.user.name, service.user %></span>
-  <span class="price"><%= service.price %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(service.created_at) %> ago.
+  You have requested a cleaning service for the address (
+  <span class="address"><%= service.address %></span>)
+  the date
+  <span class="meeting_time"><%= service.meeting_time %></span> |
+  <span class="timestamp"> 
+    Requested <%= time_ago_in_words(service.created_at) %> ago.
+    <%= link_to "Cancel Service", @service, method: :delete,
+                                    data: { confirm: "You sure?" } %>
   </span>
 </li>
