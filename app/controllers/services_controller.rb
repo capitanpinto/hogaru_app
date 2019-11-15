@@ -1,9 +1,5 @@
 class ServicesController < ApplicationController
   
-  def home
-    @order = current_user.orders.build if user_signed_in?
-  end
-  
   def index
     @user = current_user
     if @user.orders.last.present?

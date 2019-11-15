@@ -2,13 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   
-  <% if current_user.maid==true %>
-   <div class="field">
-    <%= f.label "Choose the date you want to retire"%>
-    <%= f.date_field :retire_date, class: 'form-control' %>
-  </div>
-  <% end%>
-  
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
