@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
   def index
     @user = current_user
     if @user.orders.last.present?
+       @order=@user.orders.last
       if @user.orders.last.paid != true
        ordernum=@user.orders.last.id
        @services = @user.services.where("order_id = ?", ordernum)

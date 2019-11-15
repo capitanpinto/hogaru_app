@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :maids
+  devise_for :admins
+  devise_for :users
   get 'basicpages/home'
   get 'basicpages/help'
   root 'services#home'
-  devise_for :users
   resources :users
   resources :services,         only: [:create, :destroy, :index]
   resources :orders,         only: [:create, :destroy, :index]
 end
+

@@ -24,8 +24,11 @@
     </aside>
   </div>
 <%else%>
-<%= link_to "Sign in", new_user_registration_path %></br>
-<%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %> 
+<%= link_to "Sign in as user", new_user_registration_path %></br>
+<%= link_to "Log in as user", new_user_session_path, :class => 'navbar-link'  %> </br>
+<%= link_to "Log in as admin", new_admin_session_path, :class => 'navbar-link'  %> 
+
+
 
 
 

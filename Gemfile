@@ -5,6 +5,8 @@ gem 'rails',      '6.0.0'
 gem 'devise'
 gem "better_errors"
 gem "binding_of_caller"
+gem "bulma-rails", "~> 0.8.0"
+
 gem 'bootstrap-sass', '3.4.1'
 gem 'puma',       '3.12.1'
 gem 'faker',          '2.1.2'

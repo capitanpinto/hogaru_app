@@ -1,11 +1,13 @@
 
 <h1>Your Services</h1>
   <div class="col-md-8">
-    <% if @user.orders.last.present? %>
+    <% if @user.orders.last.present? && @order.services.count <=30 %>
       <h3> You have added <%= @services.count %> services to your order </h3>
       <ol class="services">
         <%= render @services %>
       </ol>
+    <% else %>
+    <h3>You have requested the maximum amount or services per order. To request another service pay your order or cancel one of your previous requests</h3>
     <% end %>
   </div>
   <div class="row">
