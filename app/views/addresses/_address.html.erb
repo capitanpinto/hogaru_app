@@ -1,7 +1,7 @@
 <li id="address-<%= address.id %>">
-  <span class="location"><%= address.location %></span>)
+  <span class="location"><%= address.location %></span>
   <span class="timestamp"> 
-  Added <%= time_ago_in_words(address.created_at) %> ago.
+  (added <%= time_ago_in_words(address.created_at) %> ago.)
     <%= link_to "Cancel Address", address, method: :delete,
                                     data: { confirm: "You sure?" } %>
   </span>

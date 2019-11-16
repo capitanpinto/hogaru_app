@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :users
   resources :services,         only: [:create, :destroy, :index]
   resources :orders,         only: [:create, :destroy, :index, :show]
+  resources :addresses,      only: [:create, :destroy, :index]
 end
 

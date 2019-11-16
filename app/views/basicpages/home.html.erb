@@ -1,16 +1,24 @@
 <div class="center jumbotron">
 <h1>Services Home</h1>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" href="#" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+<div class="dropdown is-up">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu7">
+      <span>Dropup button</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-up" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu7" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <% if user_signed_in? %>
   <%= link_to "Mi Perfil", current_user, :class => 'navbar-link'  %> </br>
