@@ -1,0 +1,11 @@
+    <%= form_with(model: Address.new, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+   
+      <div class="field">
+        <%= f.label "Add an address to your profile" %><br />
+        <%= f.text_field :location, autofocus: true , autocomplete: "Enter your address"%>
+      </div> </br>
+    
+      <%= f.submit "Post", class: "btn btn-primary" %>
+  
+    <% end %>

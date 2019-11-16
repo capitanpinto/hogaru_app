@@ -1,0 +1,19 @@
+
+<h1>Your Orders</h1>
+  <div class="col-md-8">
+    <% if @order.present? && @order.paid != true %>
+      <h3> Your Order </h3>
+      <ol class="orders">
+        You have created an order on <%= @order.created_at %> 
+        with <%= @order.services.count %> requested services.
+      </ol>
+      <p>Cost of order <%= @price%> </p>
+    <% else %>
+    <h3>You have no orders that need to be paid</h3>
+    <% end %>
+  </div>
+</br>
+
+An email will be sent with the information to make the payment.
+  
+  <a href=# class="btn btn-info" role="button"> Send me the email</a>

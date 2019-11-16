@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
   
+  def show
+    @order=current_user.orders.last
+    @price= @order.services.count * 50000
+  end
 
   def create
     @order = current_user.orders.build

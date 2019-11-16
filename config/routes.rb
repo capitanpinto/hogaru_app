@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root 'services#home'
   resources :users
   resources :services,         only: [:create, :destroy, :index]
-  resources :orders,         only: [:create, :destroy, :index]
+  resources :orders,         only: [:create, :destroy, :index, :show]
 end
 

@@ -1,0 +1,14 @@
+<h1>Your Addresses</h1>
+  <div class="col-md-8">
+      <h3> You have <%= @addresses.count %> addresses registered to your profile</h3>
+      <ol class="addresses">
+        <%= render @addresses %>
+      </ol>
+  </div>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="service_form">
+        <%= render 'shared/address_form' %>
+      </section>
+    </aside>
+  </div></br>

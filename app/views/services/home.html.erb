@@ -2,16 +2,24 @@
 <h1>Services Home</h1>
 
 <% if user_signed_in? %>
-  <%= link_to "My profile", current_user, :class => 'navbar-link'  %> </br>
-  <%= link_to "Edit account", edit_user_registration_path %></br>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </br>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="order_form">
-        <%= render 'shared/order_form' %>
-      </section>
-    </aside>
-  </div>
+  <% if current_user.addresses.count ==0 %>
+    To start ordering cleaning services you need to register an address
+    
+    <%=render 'shared/address_form' %>
+    
+  <%else%>
+
+      <%= link_to "My profile", current_user, :class => 'navbar-link'  %> </br>
+      <%= link_to "Edit account", edit_user_registration_path,  :class => 'navbar-link' %></br>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </br>
+      <div class="row">
+        <aside class="col-md-4">
+          <section class="order_form">
+            <%= render 'shared/order_form' %>
+          </section>
+        </aside>
+      </div>
+  <%end%>
 <%else%>
 
 <%= link_to "Sign in as user", new_user_registration_path, :class => 'navbar-link'  %></br>

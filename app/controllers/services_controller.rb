@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   
   def index
+    @order=current_user.orders.last
     @user = current_user
     if @user.orders.last.present?
        @order=@user.orders.last
@@ -16,8 +17,8 @@ class ServicesController < ApplicationController
   def create
     @service = current_user.services.build(service_params)
     if current_user.orders.last.present?
-    ordernumber=current_user.orders.last.id 
-    @service.update(order_id: ordernumber)
+      ordernumber=current_user.orders.last.id 
+      @service.update(order_id: ordernumber)
     end
     if @service.save
       flash[:alert] = "You have requested a service!"
