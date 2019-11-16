@@ -1,17 +1,6 @@
 <div class="center jumbotron">
 <h1>Services Home</h1>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-
 <% if user_signed_in? %>
   <%= link_to "My profile", current_user, :class => 'navbar-link'  %> </br>
   <%= link_to "Edit account", edit_user_registration_path %></br>
@@ -24,12 +13,12 @@
     </aside>
   </div>
 <%else%>
-<%= link_to "Sign in as user", new_user_registration_path %></br>
+
+<%= link_to "Sign in as user", new_user_registration_path, :class => 'navbar-link'  %></br>
 <%= link_to "Log in as user", new_user_session_path, :class => 'navbar-link'  %> </br>
+<%= link_to "Sign in as maid", new_maid_registration_path, :class => 'navbar-link'  %></br>
+<%= link_to "Log in as maid", new_maid_session_path, :class => 'navbar-link'  %> </br>
 <%= link_to "Log in as admin", new_admin_session_path, :class => 'navbar-link'  %> 
-
-
-
 
 
 <%end%>

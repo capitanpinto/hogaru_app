@@ -6,5 +6,4 @@ class Service < ApplicationRecord
   validates :order_id, presence: true
   validates :meeting_time, presence: true
   validates :address, presence: true
-  
 end
