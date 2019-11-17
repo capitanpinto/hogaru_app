@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :admin_user,     only: [:index, :destroy]
+  before_action :valid_user,     only: [:show]
   
   def show
     @user = User.find(params[:id])
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
   
   
   def destroy
+    @user=User.find(params[:id])
+    @user.delete
+    flash[:success] = "The user was deleted"
+    redirect_to users_path
   end
   
   private
@@ -19,6 +24,9 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless admin_signed_in?
     end
-
+    
+    def valid_user
+      redirect_to(root_url) unless admin_signed_in? || User.find(params[:id])==current_user
+    end
   
 end
