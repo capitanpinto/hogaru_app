@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.build
+    @order.update(price:0)
     if @order.save
       flash[:alert] = "You have created a new order!"
       redirect_to services_path
@@ -22,6 +23,10 @@ class OrdersController < ApplicationController
   end
   
   def destroy 
+    @order=Order.find(params[:id])
+    @order.destroy
+    flash[:success] = "Order was deleted"
+    redirect_to orders_path
   end
   
     private
