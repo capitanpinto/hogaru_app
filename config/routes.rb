@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'basicpages/help'
   root 'services#home'
   resources :users,         only: [:create, :destroy, :index, :show]
+  resources :maids,         only: [:create, :destroy, :index, :show]
   resources :admins
   resources :services,         only: [:create, :destroy, :index]
   resources :orders,         only: [:create, :destroy, :index, :show]

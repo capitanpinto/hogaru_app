@@ -1,0 +1,11 @@
+<li id="user-<%= maid.id %>">
+  Name: <span class="name"><%=maid.name %></span> |
+  Email: <span><%= maid.email %></span> |
+  User_id: <span><%= maid.id %></span> |
+  Has requested <span><%= maid.services.count %></span> services and has paid <span><%= user.services.where("paid = ?", true).count * 50000 %></span>
+  <span>
+  </span>
+    <%= link_to "eliminate", maid, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+  </span>
+</li>

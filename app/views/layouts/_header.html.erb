@@ -15,7 +15,7 @@
               <%= link_to "Users",users_path, :class => 'navbar-link' %></br>
               <%= link_to "Log out", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %> </br>
             <%elsif maid_signed_in?%>
-              <%= link_to "My Profile", '#', :class => 'navbar-link'  %> </br>
+              <%= link_to "My Profile", current_maid, :class => 'navbar-link'  %> </br>
               <%= link_to "Edit", edit_maid_registration_path, :class => 'navbar-link' %></br>
               <%= link_to "Log out", destroy_maid_session_path, method: :delete, :class => 'navbar-link'  %> </br>
             <%else%>
