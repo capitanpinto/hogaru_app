@@ -5,7 +5,8 @@
       <h3> Your Order </h3>
       <ol class="orders">
         You have created an order on <%= @order.created_at %> 
-        with <%= @order.services.count %> requested services.
+        with <%= @order.services.count %> requested services |
+        Order Number: <%= @order.id%>
       </ol>
       <p>Cost of order <%= @price%> </p>
     <% else %>
@@ -14,6 +15,6 @@
   </div>
 </br>
 
-An email will be sent with the information to make the payment.
+An email will be sent with the information on how to make the payment.</br></br>
   
   <a href=# class="btn btn-info" role="button"> Send me the email</a>
