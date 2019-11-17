@@ -1,0 +1,15 @@
+<li id="order-<%= order.id %>">
+  Order from the user with user_id:
+  <span class="name"><%= order.user_id %></span>
+  for <span><%= order.services.count %></span> cleaning services for a total cost of 
+  <span class="precio"><%= order.price %></span> |
+  <span>
+    <% if order.paid==true %>
+    order has been payed
+    <% end %>
+    
+  </span>
+    <%= link_to "Cancel Order", order, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+  </span>
+</li>
