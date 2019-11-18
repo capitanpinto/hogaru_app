@@ -32,13 +32,13 @@
   <li class="list-group-item list-group-item-primary">
     <%= link_to "Maids", maids_path %></br>
   </li>
+  <li class="list-group-item list-group-item-primary">
+    <%= link_to "Orders", orders_path %></br>
+  </li>
 </ul>
 
-
-
-      <%= link_to "My Profile", '#', :class => 'navbar-link'  %> </br>
       <%= link_to "Edit Account", edit_admin_registration_path, :class => 'navbar-link' %></br>
-      <%= link_to "askdt", '#', method: :delete, :class => 'navbar-link'  %> </br>
+
 <%else%>
 
 <%= link_to "Sign in as user", new_user_registration_path, :class => 'navbar-link'  %></br>
@@ -51,20 +51,3 @@
 <%end%>
 </div>
 
-
-<%if admin_signed_in?%>
-
-<div class="list-group">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">
-        <%= link_to "Users", users_path, :class => "list-group-item list-group-item-action flex-column align-items-start active"%></h5>
-    </div>
-        <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">
-        <%= link_to "Maids", maids_path, :class => "list-group-item list-group-item-action flex-column align-items-start active"%></h5>
-    </div>
-</div>
-
-
-
-<%end%>
