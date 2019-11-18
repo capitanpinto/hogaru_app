@@ -3,7 +3,7 @@
    
   <div class="field">
     <%= f.label "Enter the address where you want the service" %><br />
-    <%= f.collection_select(:addresss, current_user.addresses.all, :id, :location) %>
+    <%= f.collection_select(:address, @addresses_to_select, :id, :location) %>
   </div> </br>
   
   

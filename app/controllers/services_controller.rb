@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   
   def index
+    @addresses_to_select=current_user.addresses.all
     @order=current_user.orders.last
     @user = current_user
     if @user.orders.last.present?

@@ -34,3 +34,9 @@ end
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(10)
+50.times do
+  address = Faker::Lorem.sentence(word_count: 3)
+  users.each { |user| user.orders.create!(content: address) }
+end
