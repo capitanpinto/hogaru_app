@@ -8,7 +8,7 @@ class MaidsController < ApplicationController
   end
   
   def index
-    @maids=Maid.all
+    @maids=Maid.all.page(params[:page])
   end
   
   
