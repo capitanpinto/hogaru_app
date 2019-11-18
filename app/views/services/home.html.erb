@@ -13,6 +13,7 @@
       <%= link_to "My Addresses", addresses_path, :class => 'navbar-link'  %> </br>
       <%= link_to "Edit Account", edit_user_registration_path,  :class => 'navbar-link' %></br>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </br>
+      
       <div class="row">
         <aside class="col-md-4">
           <section class="order_form">
@@ -41,12 +42,25 @@
 
 <%else%>
 
-<%= link_to "Sign in as user", new_user_registration_path, :class => 'navbar-link'  %></br>
-<%= link_to "Log in as user", new_user_session_path, :class => 'navbar-link'  %> </br>
-<%= link_to "Sign in as maid", new_maid_registration_path, :class => 'navbar-link'  %></br>
-<%= link_to "Log in as maid", new_maid_session_path, :class => 'navbar-link'  %> </br>
-<%= link_to "Log in as admin", new_admin_session_path, :class => 'navbar-link'  %> 
 
+<ul class="list-group">
+  <li class="list-group-item list-group-item-primary">
+    <%= link_to "Sign in as user", new_user_registration_path %></br>
+  </li>
+  <li class="list-group-item list-group-item-primary">
+    <%= link_to "Log in as user", new_user_session_path %> </br>
+  </li>
+  <li class="list-group-item list-group-item-primary">
+    <%= link_to "Sign in as maid", new_maid_registration_path %></br>
+  </li>
+  <li class="list-group-item list-group-item-primary">
+    <%= link_to "Log in as maid", new_maid_session_path %> </br>
+  </li>
+  <li class="list-group-item list-group-item-primary">
+     <%= link_to "Log in as admin", new_admin_session_path%> 
+  </li>
+
+</ul>
 
 <%end%>
 </div>
