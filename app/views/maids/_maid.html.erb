@@ -1,5 +1,5 @@
 <li id="user-<%= maid.id %>">
-  Name: <span class="name"><%=maid.name %></span> |
+  Name: <span class="name"> <%= link_to maid.name, maid %></span> |
   Email: <span><%= maid.email %></span> |
   User_id: <span><%= maid.id %></span> |
   Has done <span><%= maid.services.count %></span> services and has earn <span><%= maid.services.where("paid = ? AND meeting_time < ?", true, Time.now).count * 50000 %> pesos </span>

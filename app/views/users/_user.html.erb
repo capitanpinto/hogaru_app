@@ -1,5 +1,5 @@
 <li id="user-<%= user.id %>">
-  Name: <span class="name"><%=user.name %></span> |
+  Name: <span class="name"><%= link_to user.name, user %></span> |
   Email: <span><%= user.email %></span> |
   User_id: <span><%= user.id %></span> |
   Has requested <span><%= user.services.count %></span> services and has paid <span><%= user.services.where("paid = ?", true).count * 50000 %></span>

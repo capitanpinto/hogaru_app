@@ -5,11 +5,21 @@
   <span class="precio"><%= order.price %></span> |
   <span>
     <% if order.paid==true %>
-    order has been payed
+    order has been payed | 
+      <%= form_for order do |f| %>
+        <%= f.hidden_field :paid, value: false %>
+        <%= f.submit "Mark as not paid", class: "btn" %>
+      <% end %>
+    <% else%>
+    order hasn't been paid | 
+      <%= form_for order do |f| %>
+        <%= f.hidden_field :paid, value: true %>
+        <%= f.submit "Mark as paid", class: "btn" %>
+      <% end %>
     <% end %>
-    
-  </span>
-    <%= link_to "Cancel Order", order, method: :delete,
+        <%= link_to "Cancel Order", order, method: :delete,
                                     data: { confirm: "You sure?" } %>
-  </span>
+
+
+
 </li>

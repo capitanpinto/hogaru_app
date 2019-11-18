@@ -2,12 +2,16 @@ class OrdersController < ApplicationController
   before_action :admin_user,     only: [:index, :destroy]
   
   def show
-    @order=current_user.orders.last
+    @order=current_user.orders.first
     @price= @order.services.count * 50000
   end
   
   def index
     @orders=Order.all.page(params[:page])
+  end
+  
+  def update
+
   end
 
   def create

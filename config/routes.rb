@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :maids,         only: [:create, :destroy, :index, :show]
   resources :admins
   resources :services,         only: [:create, :destroy, :index]
-  resources :orders,         only: [:create, :destroy, :index, :show]
+  resources :orders,         only: [:create, :destroy, :index, :show, :update]
   resources :addresses,      only: [:create, :destroy, :index]
 end
 
