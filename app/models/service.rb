@@ -6,6 +6,13 @@ class Service < ApplicationRecord
   validates :order_id, presence: true
   validates :meeting_time, presence: true
   validate :correct_date
+  validate :notsunday
+  
+  def notsunday
+    if meeting_time.sunday?
+      errors.add( :meeting_time, "We don't offer services on Sundays")
+    end
+  end
   
   def correct_date
     if meeting_time <Time.now
@@ -14,3 +21,4 @@ class Service < ApplicationRecord
   end
   validates :address, presence: true
 end
+
