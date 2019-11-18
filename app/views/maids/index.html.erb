@@ -1,0 +1,8 @@
+<%if admin_signed_in? %>
+<h1>Maids</h1>
+  <div class="col-md-8">
+      <ol class="orders">
+        <%= render @maids %>
+      </ol>
+  </div>
+<%end%>

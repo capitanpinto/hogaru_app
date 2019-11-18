@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_230414) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.boolean "maid"
     t.date "retire_date"
     t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
