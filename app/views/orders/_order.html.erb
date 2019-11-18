@@ -12,10 +12,6 @@
       <% end %>
     <% else%>
     order hasn't been paid | 
-      <%= form_for order do |f| %>
-        <%= f.hidden_field :paid, value: true %>
-        <%= f.submit "Mark as paid", class: "btn" %>
-      <% end %>
     <% end %>
         <%= link_to "Cancel Order", order, method: :delete,
                                     data: { confirm: "You sure?" } %>

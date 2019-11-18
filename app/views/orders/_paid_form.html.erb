@@ -1,0 +1,7 @@
+  <div id="paid_form">
+  <% if order.paid == true %>
+    <%= render 'not_paid' %>
+  <% else %>
+    <%= render 'paid' %>
+  <% end %>
+  </div>

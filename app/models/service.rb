@@ -15,7 +15,7 @@ class Service < ApplicationRecord
   end
   
   def correct_date
-    if meeting_time <Time.now
+    if meeting_time <= Time.now
       errors.add( :meeting_time, "has to be at least a day later than today")
     end
   end

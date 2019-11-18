@@ -15,7 +15,7 @@ Maid.create!(name:  "yes positive",
 
 
 # Generate a bunch of additional users.
-99.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@email.com"
   password = "password"
@@ -25,7 +25,7 @@ Maid.create!(name:  "yes positive",
                password_confirmation: password)
 end
 
-99.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@email.com"
   password = "password"
@@ -36,7 +36,23 @@ end
 end
 
 users = User.order(:created_at).take(10)
-50.times do
-  address = Faker::Lorem.sentence(word_count: 3)
-  users.each { |user| user.orders.create!(content: address) }
-end
+now= Time.now + 60 * 60 * 24
+year_ahead= now + 60 * 60 * 24 * 3600
+
+  users.each do |user|
+        location = Faker::Lorem.sentence(word_count: 3)
+        order=user.orders.create!(paid: false)
+        15.times do |n|
+            maid=rand(1..19)
+            meet = rand(now..year_ahead)
+            while meet.wday == 0
+            meet = rand(now..year_ahead)
+            end
+            meet = meet.strftime("%Y-%m-%d")
+            user.services.create!(meeting_time: meet, 
+                                 order_id: order.id,
+                                 address: location,
+                                 maid_id: maid)
+        end
+  end
+  
