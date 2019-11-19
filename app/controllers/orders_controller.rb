@@ -13,6 +13,15 @@ class OrdersController < ApplicationController
   def update
 
   end
+  
+  def search  
+    if params[:search].blank?  
+      redirect_to(orders_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase  
+      @orders = Order.all.where("id LIKE :search", search: @parameter)  
+    end  
+  end
 
   def create
     @order = current_user.orders.build

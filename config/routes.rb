@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'basicpages/home'
   get 'basicpages/help'
+  get '/search' => 'orders#search', :as => 'search_page'
   root 'services#home'
   resources :users,         only: [:create, :destroy, :index, :show]
   resources :maids,         only: [:create, :destroy, :index, :show]
