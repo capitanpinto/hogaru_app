@@ -7,6 +7,7 @@ class Service < ApplicationRecord
   validates :meeting_time, presence: true
   validate :correct_date
   validate :notsunday
+  validates :maid_id, presence: true
   
   def notsunday
     if meeting_time.sunday?

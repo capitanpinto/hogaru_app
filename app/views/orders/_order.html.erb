@@ -2,7 +2,7 @@
   Order from the user with user_id:
   <span class="name"><%= order.user_id %></span>
   for <span><%= order.services.count %></span> cleaning services for a total cost of 
-  <span class="precio"><%= order.price %></span> |
+  <span class="precio"><%= order.services.count * 50000 %></span> |
   <span>
     <% if order.paid==true %>
     order has been payed | 
@@ -15,7 +15,6 @@
     <% end %>
         <%= link_to "Cancel Order", order, method: :delete,
                                     data: { confirm: "You sure?" } %>
-
 
 
 </li>
