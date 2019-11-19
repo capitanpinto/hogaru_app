@@ -24,13 +24,13 @@ class ServicesController < ApplicationController
     if @service.meeting_time.present?
       busymaids=Service.where("meeting_time = ?", @service.meeting_time).pluck(:maid_id) 
       i=0
-      while i<Maid.all.count && busymaids.include?(Maid.all[i].id) 
+      while i < Maid.all.count && busymaids.include?(Maid.all[i].id) 
        i+=1
       end
       if i>=Maid.all.count
         flash[:alert] = "There's no maids available that day, please choose a different day"
       else
-        @service.update(maid_id: i)
+        @service.update(maid_id: Maid.all[i].id)
       end
     end
     if @service.save
