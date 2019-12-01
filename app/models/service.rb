@@ -8,6 +8,7 @@ class Service < ApplicationRecord
   validate :correct_date
   validate :notsunday
   validates :maid_id, presence: true
+  validates :address, presence: true
   
   def notsunday
     if meeting_time.sunday?
@@ -20,6 +21,5 @@ class Service < ApplicationRecord
       errors.add( :meeting_time, "has to be at least a day later than today")
     end
   end
-  validates :address, presence: true
 end
 

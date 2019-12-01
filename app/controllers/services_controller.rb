@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+ before_action :right_user,     only: [:destroy]
   
   def index
     @addresses_to_select=current_user.addresses.all
@@ -51,6 +52,10 @@ class ServicesController < ApplicationController
   
   
   private
+  
+    def right_user
+      redirect_to(root_url) && flash[:alert]= "you can't do that you little hacker" unless Service.find(params[:id]).user_id == current_user.id
+    end
 
     def service_params
       params.require(:service).permit(:user_id, :address, :paid, :meeting_time)
