@@ -2,6 +2,7 @@ class ServicesController < ApplicationController
  before_action :right_user,     only: [:destroy]
   
   def index
+    caducated_services
     @addresses_to_select=current_user.addresses.all
     @order=current_user.orders.last
     @user = current_user
@@ -54,11 +55,19 @@ class ServicesController < ApplicationController
   private
   
     def right_user
-      redirect_to(root_url) && flash[:alert]= "you can't do that you little hacker" unless Service.find(params[:id]).user_id == current_user.id
+      redirect_to(root_url) && flash[:alert]= "You can't do that you little hacker" unless Service.find(params[:id]).user_id == current_user.id
     end
 
     def service_params
       params.require(:service).permit(:user_id, :address, :paid, :meeting_time)
+    end
+    
+    def caducated_services
+      Service.all.each do |service|
+        if service.meeting_time < Time.now + 60 * 60 * 24
+          service.destroy
+        end
+      end
     end
     
 end

@@ -64,4 +64,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
+  
+  
+
+ 
+  host = 'https://cad224b71f184ad6b8ac7872e573f6ad.vfs.cloud9.us-east-2.amazonaws.com' # Don't use this literally; use your local dev host instead
+  # Use this on the cloud IDE.
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  
 end

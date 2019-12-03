@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
   end
   
   def update
-
+    @orders=Order.find(params[:id])
+    @orders.update(order_params)
+    redirect_to(orders_path)
   end
   
   def search  
@@ -51,4 +53,8 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:user_id)
     end
+    
+  def order_params
+      params.require(:order).permit(:paid)
+  end
 end
