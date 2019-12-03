@@ -7,8 +7,15 @@ class Service < ApplicationRecord
   validates :meeting_time, presence: true
   validate :correct_date
   validate :notsunday
+  validate :right_address
   validates :maid_id, presence: true
   validates :address, presence: true
+  
+  def right_address
+    if address.user_id != user_id
+      errors.add( :user_id, "you can't order a service to comeone else's address")
+    end
+  end
   
   def notsunday
     if meeting_time.sunday?
