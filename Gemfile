@@ -8,7 +8,7 @@ gem "binding_of_caller"
 gem "bulma-rails", "~> 0.8.0"
 
 gem 'bootstrap-sass', '3.4.1'
-gem 'puma',       '3.12.1'
+gem 'puma',       '3.12.2'
 gem 'faker',          '2.1.2'
 gem 'kaminari'
 gem 'sass-rails', '5.1.0'
